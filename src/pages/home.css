@@ -1,0 +1,151 @@
+/* จัดการพื้นที่หน้า Home ทั้งหมด */
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a080a 0%, #2c1114 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 40px 20px;
+}
+
+/* ตัวการ์ดโปรไฟล์ */
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(44, 19, 22, 0.9) !important;
+  border: 2px solid #a31d24;
+  border-radius: 24px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(163, 29, 36, 0.3);
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+}
+
+.profile {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff7597;
+  box-shadow: 0 0 15px rgba(255, 117, 151, 0.5);
+  margin-bottom: 15px;
+}
+
+.card h1 {
+  font-size: 1.8rem;
+  color: #ffffff !important;
+  margin: 10px 0 5px 0;
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: #ff7597 !important;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+
+.intro {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e0d0d2;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 4px solid #f39c12;
+  text-align: left;
+}
+
+.section {
+  text-align: left;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(163, 29, 36, 0.3);
+  padding-bottom: 15px;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-size: 1.2rem;
+  color: #f39c12 !important;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section p {
+  font-size: 0.95rem;
+  margin: 6px 0;
+  color: #e0d0d2;
+}
+
+.section ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #e0d0d2;
+}
+
+.section li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill span {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+progress {
+  width: 150px;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #4a1c20;
+  border-radius: 6px;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #ff7597, #a31d24);
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #ff7597, #a31d24);
+}
+
+/* ปุ่มล็อกเอาต์ */
+.btn-logout {
+  width: 100%;
+  padding: 12px;
+  background: transparent !important;
+  border: 1.5px solid #a31d24 !important;
+  border-radius: 12px;
+  color: #ff7597 !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: #a31d24 !important;
+  color: #ffffff !important;
+}

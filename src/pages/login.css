@@ -1,0 +1,114 @@
+.login-container {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a080a 0%, #2c1114 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* ตัวการ์ดเข้าสู่ระบบ */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(44, 19, 22, 0.9) !important; /* บังคับใช้สีมืดธีมเกเฮนน่า */
+  border: 2px solid #a31d24;
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 32px rgba(163, 29, 36, 0.4);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* ล้างสไตล์ฟอร์มสีขาวตัวเก่าที่ติดมากับโปรเจกต์ */
+.login-form {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* โลโก้ปีศาจด้านบน */
+.logo-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.emblem {
+  font-size: 2.5rem;
+  background: rgba(163, 29, 36, 0.2);
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #ff7597;
+  box-shadow: 0 0 15px rgba(255, 117, 151, 0.3);
+}
+
+/* หัวข้อตัวอักษร */
+.login-form h1 {
+  font-size: 1.8rem;
+  color: #9b2b2b !important;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+}
+
+.login-form h3 {
+  font-size: 0.9rem;
+  color: #f39c12 !important;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+  letter-spacing: 1px;
+}
+
+/* ช่องกรอกข้อมูล (Input) */
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 14px 18px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: 1.5px solid rgba(163, 29, 36, 0.6) !important;
+  border-radius: 12px;
+  color: #ffffff !important;
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #ff7597 !important;
+  box-shadow: 0 0 10px rgba(255, 117, 151, 0.3);
+}
+
+/* ปุ่มกดสีแดงไล่เฉด */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #a31d24, #ff7597) !important;
+  border: none !important;
+  border-radius: 12px;
+  color: rgb(228, 107, 107) !important;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(163, 29, 36, 0.4);
+}
+
+.btn-login:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(255, 117, 151, 0.5);
+}
