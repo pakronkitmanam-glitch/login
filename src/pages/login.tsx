@@ -33,36 +33,27 @@ function Login() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const login = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const login = (e: React.FormEvent) => {
+  e.preventDefault();
 
-    try {
-      const res = await axios.get("http://localhost:3001/users");
+  const user = users.find(
+    (u) =>
+      u.username === username.trim() &&
+      u.password === password.trim()
+  );
 
-      const user = res.data.find(
-        (u: any) =>
-          u.username === username.trim() &&
-          u.password === password.trim()
-      );
+  if (user) {
+    localStorage.setItem("user", JSON.stringify(user));
 
-      if (user) {
-        localStorage.setItem("user", JSON.stringify(user));
+    setLoading(true);
 
-        // เริ่ม Animation
-        setLoading(true);
-
-        // รอ Animation เสร็จ
-        setTimeout(() => {
-          navigate("/home");
-        }, 2000);
-      } else {
-        alert("Username หรือ Password ไม่ถูกต้อง");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("เชื่อมต่อ Server ไม่สำเร็จ");
-    }
-  };
+    setTimeout(() => {
+      navigate("/home");
+    }, 2000);
+  } else {
+    alert("Username หรือ Password ไม่ถูกต้อง");
+  }
+};
 
   return (
     <div className={`login-container ${loading ? "loading" : ""}`}>
