@@ -1,8 +1,31 @@
 import { useState } from "react";
-import axios from "axios";
+
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 
+const users = [
+  {
+    id: 1,
+    username: "admin",
+    password: "1234",
+    name: "Administrator",
+    role: "admin",
+  },
+  {
+    id: 2,
+    username: "student",
+    password: "1111",
+    name: "Student",
+    role: "user",
+  },
+  {
+    id: 3,
+    username: "sensei",
+    password: "gehenna",
+    name: "Sensei",
+    role: "teacher",
+  },
+];
 function Login() {
   const navigate = useNavigate();
 
