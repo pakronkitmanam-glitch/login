@@ -1,114 +1,291 @@
+/* นำเข้าฟอนต์เท่ๆ สไตล์ Sci-Fi / Gaming */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800;900&family=Rajdhani:wght@500;700&display=swap');
+
+:root {
+  --primary-color: #ff2a5f;      /* สีชมพู-แดงนีออน Gehenna */
+  --primary-glow: rgba(255, 42, 95, 0.6);
+  --bg-dark: #0a070f;            /* สีพื้นหลังมืดสนิทอมม่วง */
+  --card-bg: rgba(21, 15, 28, 0.95); /* สีการ์ดมืดโปร่งแสงเล็กน้อย */
+  --input-bg: #150f1d;
+  --text-light: #ffffff;
+  --text-muted: #8b8098;
+}
+
+/* ตั้งค่าพื้นฐาน */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  font-family: 'Rajdhani', sans-serif;
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+/* คอนเทนเนอร์หลัก */
 .login-container {
-  width: 100vw;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #1a080a 0%, #2c1114 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, #1a0f24 0%, #050307 100%);
+  position: relative;
 }
 
-/* ตัวการ์ดเข้าสู่ระบบ */
+/* ตัวการ์ดล็อกอิน */
 .login-card {
+  background: var(--card-bg);
+  padding: 40px 45px;
+  border-radius: 16px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 
+    0 0 25px rgba(255, 42, 95, 0.15),
+    inset 0 0 15px rgba(255, 42, 95, 0.05);
   width: 100%;
-  max-width: 400px;
-  background: rgba(44, 19, 22, 0.9) !important; /* บังคับใช้สีมืดธีมเกเฮนน่า */
-  border: 2px solid #a31d24;
-  border-radius: 24px;
-  padding: 40px 30px;
-  box-shadow: 0 8px 32px rgba(163, 29, 36, 0.4);
+  max-width: 380px;
+  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
   backdrop-filter: blur(8px);
-  text-align: center;
-  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
-/* ล้างสไตล์ฟอร์มสีขาวตัวเก่าที่ติดมากับโปรเจกต์ */
-.login-form {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+/* เอฟเฟกต์การ์ดเลือนหายเมื่อกดผ่านสำเร็จ */
+.card-fade-out {
+  opacity: 0;
+  transform: scale(0.9) translateY(-20px);
+  pointer-events: none;
 }
 
-/* โลโก้ปีศาจด้านบน */
+/* โลโก้และสัญลักษณ์ */
 .logo-area {
-  display: flex;
-  justify-content: center;
   margin-bottom: 20px;
 }
 
 .emblem {
-  font-size: 2.5rem;
-  background: rgba(163, 29, 36, 0.2);
-  width: 70px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  border: 2px solid #ff7597;
-  box-shadow: 0 0 15px rgba(255, 117, 151, 0.3);
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px var(--primary-glow));
+  animation: float 3s ease-in-out infinite;
 }
 
-/* หัวข้อตัวอักษร */
-.login-form h1 {
+/* ฟอนต์หัวข้อสไตล์ Gehenna */
+.academy-title {
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.8rem;
-  color: #9b2b2b !important;
+  font-weight: 900;
+  color: var(--text-light);
   margin: 0 0 5px 0;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-.login-form h3 {
-  font-size: 0.9rem;
-  color: #f39c12 !important;
-  font-weight: 400;
-  margin: 0 0 30px 0;
+.sub-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0 0 35px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ฟอร์มการกรอกข้อมูล */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 18px;
+  background: var(--input-bg);
+  border: 1px solid #322340;
+  border-radius: 8px;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-family: 'Rajdhani', sans-serif;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
   letter-spacing: 1px;
 }
 
-/* ช่องกรอกข้อมูล (Input) */
-.input-group {
-  margin-bottom: 20px;
-  width: 100%;
+.input-group input::placeholder {
+  color: #584a66;
 }
 
-.login-form input {
-  width: 100%;
-  padding: 14px 18px;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  border: 1.5px solid rgba(163, 29, 36, 0.6) !important;
-  border-radius: 12px;
-  color: #ffffff !important;
-  font-size: 1rem;
-}
-
-.login-form input:focus {
+.input-group input:focus {
   outline: none;
-  border-color: #ff7597 !important;
-  box-shadow: 0 0 10px rgba(255, 117, 151, 0.3);
+  border-color: var(--primary-color);
+  background: #1c1427;
+  box-shadow: 0 0 12px rgba(255, 42, 95, 0.3);
 }
 
-/* ปุ่มกดสีแดงไล่เฉด */
+.input-group input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ปุ่มกดสไตล์ Sci-fi */
 .btn-login {
   width: 100%;
-  padding: 14px;
-  background: linear-gradient(90deg, #a31d24, #ff7597) !important;
-  border: none !important;
-  border-radius: 12px;
-  color: rgb(228, 107, 107) !important;
-  font-weight: 600;
-  font-size: 1rem;
+  padding: 15px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 42, 95, 0.3);
   margin-top: 10px;
-  box-shadow: 0 4px 15px rgba(163, 29, 36, 0.4);
 }
 
-.btn-login:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 6px 20px rgba(255, 117, 151, 0.5);
+.btn-login:hover:not(:disabled) {
+  background: #ff4575;
+  box-shadow: 0 0 25px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-login:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-login:disabled {
+  background: #4a2131;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* แสดงข้อความแจ้งเตือนข้อผิดพลาด */
+.error-message {
+  background: rgba(255, 42, 95, 0.1);
+  border-left: 3px solid var(--primary-color);
+  color: #ff6b8b;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* --- Portal Loader Animation (เวลาผ่านด่าน) --- */
+.portal-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  animation: scaleIn 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.portal-ring {
+  position: absolute;
+  border: 2px double var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.ring-1 {
+  width: 260px;
+  height: 260px;
+  border-style: dashed;
+  animation: rotateClockwise 8s linear infinite;
+}
+
+.ring-2 {
+  width: 220px;
+  height: 220px;
+  border-width: 1px;
+  border-style: dotted;
+  animation: rotateCounterClockwise 6s linear infinite;
+}
+
+.ring-3 {
+  width: 180px;
+  height: 180px;
+  border-style: solid;
+  opacity: 0.5;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.portal-glow {
+  width: 100px;
+  height: 100px;
+  background: var(--primary-color);
+  filter: blur(60px);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.portal-status {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-top: 320px; /* ขยับตัวหนังสือลงมาข้างล่างพอร์ทัล */
+  letter-spacing: 5px;
+  color: var(--text-light);
+  text-shadow: 0 0 15px var(--primary-glow);
+}
+
+.portal-subtext {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+/* --- Animations --- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.05); opacity: 0.7; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+/* จัดโลโก้ให้อยู่กึ่งกลาง */
+.logo-area {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center; /* จัดกึ่งกลางแนวนอน */
+  align-items: center;
+  width: 100%;
+}
+
+/* ลบกล่องสีขาวเดิมทิ้ง */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  background: transparent !important; /* บังคับให้พื้นหลังโปร่งใส */
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
 }
