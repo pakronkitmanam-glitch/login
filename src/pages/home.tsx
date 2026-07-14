@@ -7,12 +7,12 @@ function Home() {
 
   const handleLogout = () => {
     localStorage.removeItem("user"); // ลบข้อมูล user ออกจากระบบ
-    navigate("/login"); // เด้งกลับไปหน้า Login 
+    navigate("/", { replace: true });
   };
 
   return (
     <div className="container">
-      <div className="card">
+      <div className="card">  
 
         <img
           src="ibuki.jpg" /* อย่าลืมเปลี่ยนรูปภาพเป็นรูปน้องอิบุุกินะครับ */

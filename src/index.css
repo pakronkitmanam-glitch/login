@@ -1,7 +1,9 @@
-body{
-    margin:0;
-    font-family:Arial;
-    background:#0f172a;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh; /* ใช้ min-height แทน height เพื่อให้ยืดได้ */
+  overflow-y: auto;  /* เปิดให้เลื่อนในแนวตั้งได้แน่นอน */
 }
 
 .login{

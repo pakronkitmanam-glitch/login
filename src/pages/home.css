@@ -1,20 +1,21 @@
 /* จัดการพื้นที่หน้า Home ทั้งหมด */
 .container {
-  width: 100vw;
+  width: 100%; /* เปลี่ยนจาก 100vw เป็น 100% เพื่อเลี่ยงบั๊ก scrollbar แนวนอน */
   min-height: 100vh;
   background: linear-gradient(135deg, #1a080a 0%, #2c1114 100%);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* เปลี่ยนจาก center เป็น flex-start เพื่อให้เวลาหน้าจอสั้น การ์ดจะไม่ลอยทะลุขอบบน */
   box-sizing: border-box;
   padding: 40px 20px;
+  overflow-y: auto; /* บังคับเปิด scroll แนวตั้งเฉพาะใน container */
 }
 
 /* ตัวการ์ดโปรไฟล์ */
 .card {
   width: 100%;
   max-width: 480px;
-  background: rgba(44, 19, 22, 0.9) !important;
+  background: rgba(44, 19, 22, 0.9);
   border: 2px solid #a31d24;
   border-radius: 24px;
   padding: 35px 25px;
@@ -36,13 +37,13 @@
 
 .card h1 {
   font-size: 1.8rem;
-  color: #ffffff !important;
+  color: #ffffff;
   margin: 10px 0 5px 0;
 }
 
 .card h3 {
   font-size: 1rem;
-  color: #ff7597 !important;
+  color: #ff7597;
   font-weight: 400;
   margin: 0 0 20px 0;
 }
@@ -72,7 +73,7 @@
 
 .section h2 {
   font-size: 1.2rem;
-  color: #f39c12 !important;
+  color: #f39c12;
   margin: 0 0 12px 0;
   display: flex;
   align-items: center;
@@ -101,6 +102,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  gap: 15px; /* เพิ่มช่องว่างเล็กน้อยระหว่างข้อความกับหลอดพลัง */
 }
 
 .skill span {
@@ -108,6 +110,7 @@
   color: #ffffff;
 }
 
+/* ตกแต่งแถบความสามารถ */
 progress {
   width: 150px;
   height: 12px;
@@ -115,6 +118,8 @@ progress {
   overflow: hidden;
   appearance: none;
   -webkit-appearance: none;
+  border: none; /* ล้างขอบสำหรับ Firefox */
+  background-color: #4a1c20; /* รองรับเบราว์เซอร์ทั่วไป */
 }
 
 progress::-webkit-progress-bar {
@@ -128,16 +133,17 @@ progress::-webkit-progress-value {
 
 progress::-moz-progress-bar {
   background: linear-gradient(90deg, #ff7597, #a31d24);
+  border: none;
 }
 
-/* ปุ่มล็อกเอาต์ */
+/* ปุ่มล็อกเอาต์สไตล์เท่ๆ */
 .btn-logout {
   width: 100%;
   padding: 12px;
-  background: transparent !important;
-  border: 1.5px solid #a31d24 !important;
+  background: transparent;
+  border: 1.5px solid #a31d24;
   border-radius: 12px;
-  color: #ff7597 !important;
+  color: #ff7597;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -146,6 +152,11 @@ progress::-moz-progress-bar {
 }
 
 .btn-logout:hover {
-  background: #a31d24 !important;
-  color: #ffffff !important;
+  background: #a31d24;
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(163, 29, 36, 0.5); /* เพิ่มแสงเรืองรองตอน hover */
+}
+
+.btn-logout:active {
+  transform: scale(0.98); /* เอฟเฟกต์ยุบตัวลงเล็กน้อยตอนคลิก */
 }
