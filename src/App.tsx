@@ -5,7 +5,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <BrowserRouter>
+    // 🌟 เพิ่ม basename="/login" เข้าไปตรงนี้ครับ
+    <BrowserRouter basename="/login">
       <Routes>
         {/* หน้าแรกสุดคือหน้า Login */}
         <Route path="/" element={<Login />} />
