@@ -5,13 +5,10 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    // 🌟 เพิ่ม basename="/login" เข้าไปตรงนี้ครับ
-    <BrowserRouter basename="/login">
+    <BrowserRouter basename="/project1">
       <Routes>
-        {/* หน้าแรกสุดคือหน้า Login */}
         <Route path="/" element={<Login />} />
 
-        {/* หน้าข้อมูลน้อง Ibuki ที่ต้องผ่านการ Login ก่อน */}
         <Route
           path="/home"
           element={
